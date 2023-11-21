@@ -1,0 +1,23 @@
+spring:
+  rabbitmq:
+    host: 10.86.18.72
+    port: 5672
+    username: admin
+    password: admin
+    publisher-confirm-type: correlated #发布消息到交换器后会触发回调方法
+    publisher-returns: true
+    listener:
+      simple:
+        #如果是手动ACK配置了重试机制，在抛出异常的时候仍会触发重试，但是达到重试上限之后，会永远处于Unacked状态，不会进入到死信队列，必须要手动拒绝才可以进入死信队列，所以说这里不用配置重试机制而是采用手动重试的方式
+        acknowledge-mode: manual
+        concurrency: 5
+        max-concurrency: 50
+        #开启重试，消费者会在本地重试，重试达最大次数后，Spring会返回ACK，默认消息丢弃
+        retry:
+          enabled: false #关闭消费者失败重试
+          initial-interval: 1000 #初识的失败等待时长为1秒
+          multiplier: 1 #失败的等待时长倍数，下次等待时长 = multiplier * last-interval
+          max-attempts: 3 #最大重试次数
+          stateless: true #true无状态；false有状态
+    virtual-host: / #服务器的连接使用的虚拟机
+    connection-timeout: 30000 #连接服务器broker的超时时间
