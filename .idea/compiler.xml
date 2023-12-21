@@ -11,11 +11,13 @@
         <module name="rabbitmq" />
         <module name="redisson (1)" />
         <module name="lettuce" />
+        <module name="realtimepush" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lettuce" target="1.8" />
       <module name="rabbitmq" target="1.8" />
+      <module name="realtimepush" target="1.8" />
       <module name="redisson" target="1.8" />
       <module name="redisson (1)" target="1.8" />
       <module name="springboot-plugins" target="1.8" />
@@ -25,6 +27,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="lettuce" options="-parameters" />
       <module name="rabbitmq" options="-parameters" />
+      <module name="realtimepush" options="-parameters" />
       <module name="redisson" options="-parameters" />
       <module name="redisson (1)" options="-parameters" />
       <module name="springboot-plugins" options="-parameters" />

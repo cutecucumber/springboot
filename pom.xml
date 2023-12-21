@@ -25,6 +25,7 @@
 
     <modules>
         <module>rabbitmq</module>
+        <module>realtimepush</module>
         <module>redis/redisson</module>
         <module>redis/lettuce</module>
     </modules>
@@ -65,6 +66,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
+        </dependency>
+        <!-- thymeleaf 页面模版 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
     </dependencies>
 

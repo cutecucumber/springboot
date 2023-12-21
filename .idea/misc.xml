@@ -8,6 +8,7 @@
         <option value="$PROJECT_DIR$/redisson/pom.xml" />
         <option value="$PROJECT_DIR$/redis/lettuce/pom.xml" />
         <option value="$PROJECT_DIR$/redis/redisson/pom.xml" />
+        <option value="$PROJECT_DIR$/realtimepush/pom.xml" />
       </list>
     </option>
   </component>
